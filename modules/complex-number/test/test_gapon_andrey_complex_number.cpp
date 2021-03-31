@@ -57,4 +57,4 @@ INSTANTIATE_TEST_CASE_P(, Gapon_Andrey_ComplexNumberTest_Param,
         std::make_tuple(1.0, 2.0, 3.0, 4.0, 5.0, 6.0),
         std::make_tuple(7.0, 8.0, 9.0, 1.0, 2.0, 3.0),
         std::make_tuple(4.0, 5.0, 6.5, 7.0, 8.0, 9.0),
-        std::make_tuple(1.0, 2.0, 3.0, 4.0, 5.0, 6.0)));
+        std::make_tuple(10.5, 12.3, 13.4, 14.0, 15.0, 16.0)));

@@ -43,26 +43,3 @@ set_tests_properties (${prefix}_can_Detect_Wrong_Value_Data2 PROPERTIES
 PASS_REGULAR_EXPRESSION "ERROR: 10,1 is invalid argument"
 LABELS "${MODULE}")
 
-add_test(
-NAME ${prefix}_can_With_Valid_Value_Argument1
-COMMAND ${APPLICATION} BIN 1000
-)
-set_tests_properties (${prefix}_can_With_Valid_Value_Argument1 PROPERTIES
-PASS_REGULAR_EXPRESSION "BIN to OCT: 10"
-LABELS "${MODULE}")
-
-add_test(
-NAME ${prefix}_can_With_Valid_Value_Argument2
-COMMAND ${APPLICATION} OCT 10
-)
-set_tests_properties (${prefix}_can_With_Valid_Value_Argument2 PROPERTIES
-PASS_REGULAR_EXPRESSION "OCT to BIN: 1000"
-LABELS "${MODULE}")
-
-add_test(
-NAME ${prefix}_can_With_Valid_Value_Argument3
-COMMAND ${APPLICATION} HEX AB
-)
-set_tests_properties (${prefix}_can_With_Valid_Value_Argument3 PROPERTIES
-PASS_REGULAR_EXPRESSION "HEX to BIN: 10101011"
-LABELS "${MODULE}")

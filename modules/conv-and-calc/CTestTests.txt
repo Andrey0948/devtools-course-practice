@@ -32,7 +32,7 @@ add_test(
     COMMAND ${APPLICATION} BIN -10
 )
 set_tests_properties (${prefix}_can_Detect_Wrong_Value_Data1 PROPERTIES
-    PASS_REGULAR_EXPRESSION "ERROR: -10 is not positive number"
+    PASS_REGULAR_EXPRESSION "ERROR: -10 is invalid argument"
     LABELS "${MODULE}")
 
 add_test(

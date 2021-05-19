@@ -32,10 +32,7 @@ std::string NumConvCalcApplication::operator()(int argc,
       for (int i = 0; i < size; i++) {
         std::stringstream convert(argv[i + 1]);
         std::string num;
-        if (!(convert >> num)) {
-          throw std::runtime_error("ERROR: " +
-            std::string(argv[i + 1]) + " is invalid argument\n\n");
-        }
+        convert >> num;
         str.push_back(num);
       }
       std::ostringstream stream;
@@ -43,7 +40,7 @@ std::string NumConvCalcApplication::operator()(int argc,
         std::string ENG = "-,ABCDEFGHIJKLMNOPQRSTUVWXYZ" \
           "abcdefghijklmnopqrstuvwxyz";
         for (size_t i = 0; i < str[1].size(); i++) {
-          for (size_t j = 0; j < str[1].size(); j++) {
+          for (size_t j = 0; j < ENG.size(); j++) {
             if (str[1][i] == ENG[j])
               throw std::runtime_error("ERROR: " +
                 str[1] + " is invalid argument\n\n");
@@ -56,7 +53,7 @@ std::string NumConvCalcApplication::operator()(int argc,
         std::string ENG = "-,ABCDEFGHIJKLMNOPQRSTUVWXYZ" \
           "abcdefghijklmnopqrstuvwxyz";
         for (size_t i = 0; i < str[1].size(); i++) {
-          for (size_t j = 0; j < str[1].size(); j++) {
+          for (size_t j = 0; j < ENG.size(); j++) {
             if (str[1][i] == ENG[j])
               throw std::runtime_error("ERROR: " +
                 str[1] + " is invalid argument\n\n");
@@ -68,7 +65,7 @@ std::string NumConvCalcApplication::operator()(int argc,
       } else if (str[0] == "HEX") {
         std::string eng = "-,abcdefghijklmnopqrstuvwxyz";
         for (size_t i = 0; i < str[1].size(); i++) {
-          for (size_t j = 0; j < str[1].size(); j++) {
+          for (size_t j = 0; j < eng.size(); j++) {
             if (str[1][i] == eng[j])
               throw std::runtime_error("ERROR: " +
                 str[1] + " is invalid argument\n\n");

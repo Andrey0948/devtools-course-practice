@@ -50,8 +50,7 @@ std::string NumConvCalcApplication::operator()(int argc,
                 NumberConverter val(str[1], BIN);
                 stream << "BIN to OCT: " << val.GetNumberInOct() << "\n";
                 stream << "BIN to HEX: " << val.GetNumberInHex() << "\n";
-            }
-            else if (str[0] == "OCT") {
+            } else if (str[0] == "OCT") {
                 std::string ENG = "-,ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                     "abcdefghijklmnopqrstuvwxyz";
 
@@ -65,8 +64,7 @@ std::string NumConvCalcApplication::operator()(int argc,
                 NumberConverter val(str[1], OCT);
                 stream << "OCT to BIN: " << val.GetNumberInBin() << "\n";
                 stream << "OCT to HEX: " << val.GetNumberInHex() << "\n";
-            }
-            else if (str[0] == "HEX") {
+            } else if (str[0] == "HEX") {
                 std::string eng = "-,abcdefghijklmnopqrstuvwxyz";
 
                 for (size_t i = 0; i < str[1].size(); i++) {
@@ -79,8 +77,7 @@ std::string NumConvCalcApplication::operator()(int argc,
                 NumberConverter val(str[1], HEX);
                 stream << "HEX to BIN: " << val.GetNumberInBin() << "\n";
                 stream << "HEX to OCT: " << val.GetNumberInOct() << "\n";
-            }
-            else {
+            } else {
                 throw std::runtime_error("ERROR: " +
                     str[0] + " is invalid argument\n\n");
             }

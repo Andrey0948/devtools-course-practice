@@ -37,43 +37,23 @@ std::string NumConvCalcApplication::operator()(int argc,
             }
             std::ostringstream stream;
             if (str[0] == "BIN") {
-                std::string ENG = "-,ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                    "abcdefghijklmnopqrstuvwxyz";
-
-                for (size_t i = 0; i < str[1].size(); i++) {
-                    for (size_t j = 0; j < ENG.size(); j++) {
-                        if (str[1][i] == ENG[j])
-                            throw std::runtime_error("ERROR: " +
-                                str[1] + " is invalid argument\n\n");
-                    }
-                }
+                if (str[1].find_first_not_of("01") != std::string::npos)
+                    throw std::runtime_error("ERROR: " +
+                        str[1] + " is invalid argument\n\n");
                 NumberConverter val(str[1], BIN);
                 stream << "BIN to OCT: " << val.GetNumberInOct() << "\n";
                 stream << "BIN to HEX: " << val.GetNumberInHex() << "\n";
             } else if (str[0] == "OCT") {
-                std::string ENG = "-,ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                    "abcdefghijklmnopqrstuvwxyz";
-
-                for (size_t i = 0; i < str[1].size(); i++) {
-                    for (size_t j = 0; j < ENG.size(); j++) {
-                        if (str[1][i] == ENG[j])
-                            throw std::runtime_error("ERROR: " +
-                                str[1] + " is invalid argument\n\n");
-                    }
-                }
+                 if (str[1].find_first_not_of("01234567") != std::string::npos)
+                    throw std::runtime_error("ERROR: " +
+                        str[1] + " is invalid argument\n\n");
                 NumberConverter val(str[1], OCT);
                 stream << "OCT to BIN: " << val.GetNumberInBin() << "\n";
                 stream << "OCT to HEX: " << val.GetNumberInHex() << "\n";
             } else if (str[0] == "HEX") {
-                std::string eng = "-,abcdefghijklmnopqrstuvwxyz";
-
-                for (size_t i = 0; i < str[1].size(); i++) {
-                    for (size_t j = 0; j < eng.size(); j++) {
-                        if (str[1][i] == eng[j])
-                            throw std::runtime_error("ERROR: " +
-                                str[1] + " is invalid argument\n\n");
-                    }
-                }
+                if (str[1].find_first_not_of("0123456789ABCDEF") != std::string::npos)
+                    throw std::runtime_error("ERROR: " +
+                        str[1] + " is invalid argument\n\n");
                 NumberConverter val(str[1], HEX);
                 stream << "HEX to BIN: " << val.GetNumberInBin() << "\n";
                 stream << "HEX to OCT: " << val.GetNumberInOct() << "\n";

@@ -1,4 +1,4 @@
-// Copyright 2021 Bulychev Vladislav
+// Copyright 2021 Gapon Andrey
 
 #include <iostream>
 #include <string>

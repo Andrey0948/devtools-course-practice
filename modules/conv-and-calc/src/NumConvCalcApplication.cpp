@@ -51,7 +51,8 @@ std::string NumConvCalcApplication::operator()(int argc,
                 stream << "OCT to BIN: " << val.GetNumberInBin() << "\n";
                 stream << "OCT to HEX: " << val.GetNumberInHex() << "\n";
             } else if (str[0] == "HEX") {
-                if (str[1].find_first_not_of("0123456789ABCDEF") != std::string::npos)
+                if (str[1].find_first_not_of("0123456789ABCDEF")
+                    != std::string::npos)
                     throw std::runtime_error("ERROR: " +
                         str[1] + " is invalid argument\n\n");
                 NumberConverter val(str[1], HEX);

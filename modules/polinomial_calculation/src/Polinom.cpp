@@ -45,9 +45,9 @@ Polinom::Polinom(const Polinom& r) {
 }
 
 Polinom::~Polinom() {
-    Monom* h = head, *temp;
+    Monom* h = head;
     while (h != head) {
-        temp = h;
+        Monom* temp = h;
         h = h->next;
         delete temp;
     }

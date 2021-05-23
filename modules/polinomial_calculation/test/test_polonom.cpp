@@ -6,6 +6,18 @@
 #include "include/Polinom.h"
 #include "include/Monom.h"
 
+TEST(Poly, destructor) {
+    std::vector<std::string> var;
+    var.push_back("x");
+    var.push_back("y");
+    var.push_back("z");
+    Polinom *p = new Polinom (
+        "10*x^5*y^1*z^4+7*x^4*y^2*z^1+12*x^3+7*z^2+7-13*x^7*y^1*z^3",
+        var, 20);
+
+    ASSERT_NO_THROW(delete p);
+}
+
 TEST(Poly, can_construct_from_string_NO85) {
     ASSERT_NO_THROW(Monom m);
 }

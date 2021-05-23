@@ -141,7 +141,7 @@ TEST(Poly, is_equal_working_correctly) {
     Polinom p1("15*x+7*y", var, 20);
     Polinom p2("7*y+15*x", var, 20);
 
-    EXPECT_TRUE(p1 == p2);
+    ASSERT_TRUE(p1 == p2);
 }
 
 TEST(Poly, is_equal_working_correctly_NO2) {
@@ -153,7 +153,7 @@ TEST(Poly, is_equal_working_correctly_NO2) {
     Polinom p1("12 + 6 * x^5 * z^3 + 4* y ^3 -3-13*x^5*z^3 - 7", var, 20);
     Polinom p2("12+6*x^5*z^3+4*y^3-3-13*x^5*z^3-7", var, 20);
 
-    EXPECT_EQ(p1, p2);
+    ASSERT_EQ(p1, p2);
 }
 
 TEST(Poly, is_not_equal_working_correctly) {
@@ -165,7 +165,7 @@ TEST(Poly, is_not_equal_working_correctly) {
     Polinom p1("15*x+7*y", var, 20);
     Polinom p2("-7*y+15*x", var, 20);
 
-    EXPECT_TRUE(p1 != p2);
+    ASSERT_TRUE(p1 != p2);
 }
 
 TEST(Poly, can_cast_similar_monoms) {
@@ -177,7 +177,7 @@ TEST(Poly, can_cast_similar_monoms) {
 
     Polinom p("12+6*x^5*z^3+4*y^3-3-13*x^5*z^3", var, 20);
 
-    EXPECT_EQ(res, p);
+    ASSERT_EQ(res, p);
 }
 
 TEST(Poly, can_copy) {
@@ -189,7 +189,7 @@ TEST(Poly, can_copy) {
     Polinom polinom("15*x+7*y", var, 20);
     Polinom polinom_2 = polinom;
 
-    EXPECT_EQ(polinom, polinom_2);
+    ASSERT_EQ(polinom, polinom_2);
 }
 
 TEST(Poly, can_copy_NO156) {
@@ -201,7 +201,7 @@ TEST(Poly, can_copy_NO156) {
     Polinom polinom("15*x+7*y", var, 20);
     Polinom polinom_2(polinom);
 
-    EXPECT_EQ(polinom, polinom_2);
+    ASSERT_EQ(polinom, polinom_2);
 }
 
 TEST(Poly, sum_gives_correct_answer) {
@@ -214,7 +214,7 @@ TEST(Poly, sum_gives_correct_answer) {
     Polinom p1("7*x*y^2+4", var, 20);
     Polinom p2("-3*x*y^2-4", var, 20);
 
-    EXPECT_EQ(res, p1 + p2);
+    ASSERT_EQ(res, p1 + p2);
 }
 
 TEST(Poly, sum_gives_correct_answer_NO2) {
@@ -227,7 +227,7 @@ TEST(Poly, sum_gives_correct_answer_NO2) {
     Polinom p1("6*x^2+3*x^3+20*x^5*y^3*z^10-7", var, 20);
     Polinom p2("-12*x^2+3*y*z+4", var, 20);
 
-    EXPECT_EQ(res, p1 + p2);
+    ASSERT_EQ(res, p1 + p2);
 }
 
 TEST(Poly, sum_gives_correct_answer_NO3) {
@@ -240,7 +240,7 @@ TEST(Poly, sum_gives_correct_answer_NO3) {
     Polinom p1("-12*x^2+3*y*z+4", var, 20);
     Polinom p2("6*x^2+3*x^3+20*x^5*y^3*z^10-7", var, 20);
 
-    EXPECT_EQ(res, p1 + p2);
+    ASSERT_EQ(res, p1 + p2);
 }
 
 
@@ -254,7 +254,7 @@ TEST(Poly, diff_gives_correct_answer) {
     Polinom p1("-12*a^2+3*b*c+4", var, 20);
     Polinom p2("6*a^2+3*a^3+20*a^5*b^3*c^10-7", var, 20);
 
-    EXPECT_EQ(res, p1 - p2);
+    ASSERT_EQ(res, p1 - p2);
 }
 
 TEST(Poly, diff_gives_correct_answer_NO2) {
@@ -267,7 +267,7 @@ TEST(Poly, diff_gives_correct_answer_NO2) {
     Polinom p1("6*a^2+3*a^3+20*a^5*b^3*c^10-7", var, 20);
     Polinom p2("-12*a^2+3*b*c+4", var, 20);
 
-    EXPECT_EQ(res, p1 - p2);
+    ASSERT_EQ(res, p1 - p2);
 }
 
 TEST(Poly, mult_gives_correct_answer) {
@@ -284,7 +284,7 @@ TEST(Poly, mult_gives_correct_answer) {
 
     Polinom p3 = p1 * p2;
 
-    EXPECT_EQ(res, p3);
+    ASSERT_EQ(res, p3);
 }
 
 TEST(Poly, mult_with_num_gives_correct_answer) {
@@ -297,7 +297,7 @@ TEST(Poly, mult_with_num_gives_correct_answer) {
     Polinom p("-12*a^2+3*b*c+4", var, 20);
     Polinom p3 = p * -3;
 
-    EXPECT_EQ(res, p3);
+    ASSERT_EQ(res, p3);
 }
 
 TEST(Poly, sum_throws_when_base_is_different) {

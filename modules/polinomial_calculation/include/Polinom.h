@@ -29,6 +29,7 @@ class Polinom {
     Polinom(std::string str, std::vector<std::string> var, int _base = 20);
 
     Polinom(const Polinom& r);
+    ~Polinom();
 
     void sortedAdd(int coef, int pows);
 

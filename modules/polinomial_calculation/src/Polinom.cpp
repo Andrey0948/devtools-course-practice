@@ -44,6 +44,15 @@ Polinom::Polinom(const Polinom& r) {
     }
 }
 
+Polinom::~Polinom() {
+    Monom* h = head, *temp;
+    while (h != head) {
+        temp = h;
+        h = h->next;
+        delete temp;
+    }
+}
+
 Polinom::Polinom(std::string str, std::vector<std::string> _var, int _base) {
     if (_base < 2) throw "Base should be higher than 2";
 
